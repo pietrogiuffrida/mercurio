@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
       name='mercurio',
-      version='0.10.1',
+      version='0.10.2',
       url='https://github.com/pietrogiuffrida/mercurio/',
       author='Pietro Giuffrida',
       author_email='pietro.giuffri@gmail.com',
@@ -20,5 +20,5 @@ setup(
       ],
       description='Send email with python, my way',
       long_description=long_description,
-      long_description_content_type='text/x-rst',
+      long_description_content_type='text/markdown',
 )

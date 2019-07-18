@@ -1,11 +1,17 @@
-Mercurio
-=========
+# Mercurio
 
-Send email with python, my way
+Send email with python, my way.
 
-A simple class to send email with python, managing
+Mercurio is a simple class to send email with python, managing
 smtp, attachments and mimetypes, multiple recipients,
 attachments with a specific content id (to html email templating)...
+
+## Installation
+
+Installation is as easy as run:
+```pip install mercurio```
+
+## Usage
 
 To initialize a mercurio instance simply call it with
 typical smtp parameters. No connection will be opened
@@ -44,7 +50,7 @@ with open('test_email.eml', 'w') as o:
 
 
 Send a real message is easy: use
-previous defined hg instance, and call
+an hg instance, and call
 send method with its parameters. Note that you can
 send multiple type of attachments (images, xlsx, json,
 txt). Mercurio can choice the correct mime type.
