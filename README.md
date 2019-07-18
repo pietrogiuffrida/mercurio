@@ -12,36 +12,35 @@ typical smtp parameters. No connection will be opened
 at this stage, then you can initialize and reuse it
 during the whole code.
 
-.. code:: python
+```python
+from mercurio import mercurio
 
-    from mercurio import mercurio
-    
-    hg = mercurio(
-        host="smtp.test.com",
-        port=25,
-        smtp_user="myuser",
-        smtp_pwd="mypwd"
-    )
+hg = mercurio(
+    host="smtp.test.com",
+    port=25,
+    smtp_user="myuser",
+    smtp_pwd="mypwd"
+)
+```
 
 To debug purposes, you can create the message and save it in a file
 without send it thgrougth smtp. You can open such file
 with a normal email client.
 
-.. code:: python
+```python
+message = hg.make_message(
+    fromaddress="from@me.com",
+    recipient="to@me.com",
+    reply_to_address="reply@to.me",
+    text="a long text, very long.",
+    sbj="The subject, or the object?",
+    attachments=[],
+    cid_attachments={}
+)
 
-    message = hg.make_message(
-        fromaddress="from@me.com",
-        recipient="to@me.com",
-        reply_to_address="reply@to.me",
-        text="a long text, very long.",
-        sbj="The subject, or the object?",
-        attachments=[],
-        cid_attachments={}
-    )
-
-    with open('test_email.eml', 'w') as o:
-        o.write(message.as_string())
-
+with open('test_email.eml', 'w') as o:
+    o.write(message.as_string())
+```
 
 
 Send a real message is easy: use
@@ -53,14 +52,14 @@ You can also use attachment with a specific content
 id, that can be used in html email to include
 images in the body of the message.
 
-.. code:: python
-
-    hg.send(
-        fromaddress="from@me.com",
-        recipients=["to@me.com"],
-        reply_to_address="reply@to.me",
-        text="a long text, very long.",
-        sbj="The subject, or the object?",
-        attachments=[],
-        cid_attachments={"content_id_01": "mylogo.png"}
-    )
+```python
+hg.send(
+    fromaddress="from@me.com",
+    recipients=["to@me.com"],
+    reply_to_address="reply@to.me",
+    text="a long text, very long.",
+    sbj="The subject, or the object?",
+    attachments=[],
+    cid_attachments={"content_id_01": "mylogo.png"}
+)
+```
