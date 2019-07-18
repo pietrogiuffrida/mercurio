@@ -157,7 +157,7 @@ class mercurio:
 
         Args:
             fromaddress (str): Indirizzo e-mail del mittente
-            recipient (list): Lista contenente gli indirizzi e-mail dei destinatari
+            recipient (str): Lista contenente gli indirizzi e-mail dei destinatari
             reply_to_address (str):
             text (str): Messaggio di testo della mail
             sbj (str): Soggetto della mail

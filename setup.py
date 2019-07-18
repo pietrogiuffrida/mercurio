@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
       name='mercurio',
-      version='0.1',
+      version='0.10.1',
       url='https://github.com/pietrogiuffrida/mercurio/',
       author='Pietro Giuffrida',
       author_email='pietro.giuffri@gmail.com',
